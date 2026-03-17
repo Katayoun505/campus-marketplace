@@ -1,102 +1,67 @@
-Campus Marketplace
+# 🛒 Campus Marketplace  
+### A Smarter Way to Buy and Sell on Campus  
 
-A Smarter Way to Buy and Sell on Campus
+---
 
-📖 Overview
+## 📌 Overview  
+Campus Marketplace is a web-based application developed for university students to buy and sell products within their campus community.  
 
-Campus Marketplace is a web-based platform designed for university students to buy and sell products within their campus community.
+The platform provides a secure, user-friendly, and efficient environment where users can browse listings, search for products, and post items for sale.
 
-The system provides a simple and secure environment where users can browse listings, search for products, and post items for sale.
+---
 
-🚀 Features
+## 🚀 Features  
 
-User registration and login
+- User registration and login  
+- Secure password handling (SHA256)  
+- Product listing and browsing  
+- Category-based filtering  
+- Search functionality  
+- Sell product feature  
+- Contact form with database storage  
+- Responsive and modern user interface  
 
-Secure password handling
+---
 
-Product listing and browsing
+## 🛠️ Technologies Used  
 
-Category-based filtering
+- ASP.NET Core MVC  
+- C#  
+- Entity Framework Core  
+- SQL Server (LocalDB)  
+- HTML5, CSS3, Bootstrap  
+- JavaScript  
 
-Search functionality
+---
 
-Sell product feature
+## 🧪 Testing  
 
-Contact form with database storage
+- User registration stores data correctly  
+- Login authentication validates users  
+- Invalid login displays error messages  
+- Product search and filtering works properly  
+- Contact form saves messages in database  
+- Logout clears session successfully  
 
-Responsive and modern UI
+---
 
-🛠️ Technologies Used
+## ⚙️ How to Run  
 
-ASP.NET Core MVC
+1. Open the project in Visual Studio  
+2. Open Package Manager Console  
+3. Run:
+   Update-Database
+4. Press F5 to run the application  
 
-C#
+---
 
-Entity Framework Core
+## 👩‍💻 Author  
 
-SQL Server (LocalDB)
+Katayoun Rafat  
+University of Dubai  
 
-HTML, CSS, Bootstrap
+---
 
-JavaScript
+## 📜 License  
 
-🧪 Testing
-
-The application was tested to ensure all core functionalities work correctly:
-
-User signup stores data in database
-
-Login authentication validates users
-
-Invalid login shows error messages
-
-Contact form saves messages
-
-Product search and filters work
-
-Navigation updates after login/logout
-
-📂 Project Structure
-
-Controllers → Application logic
-
-Models → Database entities
-
-ViewModels → Data handling for forms
-
-Views → User interface
-
-wwwroot → Static files (CSS, JS, Images)
-
-⚙️ How to Run the Project
-
-Open the project in Visual Studio
-
-Ensure SQL Server LocalDB is installed
-
-Run the following command in Package Manager Console:
-
-Update-Database
-
-Press Run (F5) to start the application
-
-🎯 Future Improvements
-
-Add product image upload
-
-User profile management
-
-Edit/Delete product functionality
-
-Payment integration
-
-Messaging system between users
-
-👩‍💻 Author
-
-Katayoun Rafat
-University of Dubai
-
-📌 Note
-
-This project was developed as part of the ITGN 350 Web Development course.
+This project is developed for academic purposes only.
