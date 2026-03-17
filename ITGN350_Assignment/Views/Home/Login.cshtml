@@ -1,0 +1,82 @@
+﻿@model ITGN350_Assignment.ViewModels.LoginViewModel
+@{
+    ViewData["Title"] = "Login";
+}
+
+<section class="page-hero text-center mb-4">
+    <span class="section-badge">Student Access</span>
+    <h1 class="display-5 fw-bold mt-3">Welcome Back</h1>
+    <p class="lead text-muted mx-auto hero-text">
+        Login to continue your Campus Marketplace experience and access a cleaner, smarter student platform.
+    </p>
+</section>
+
+<div class="row justify-content-center align-items-stretch g-4">
+    <div class="col-lg-5">
+        <div class="side-auth-card h-100">
+            <h2 class="fw-bold">Why Login?</h2>
+            <p class="text-muted">
+                Your account gives you access to a more personalized and structured marketplace experience.
+            </p>
+
+            <ul class="auth-points">
+                <li>Secure student login system</li>
+                <li>Access product browsing and account-based features</li>
+                <li>Professional and responsive user experience</li>
+                <li>Faster access to marketplace activities</li>
+            </ul>
+
+            <div class="mt-4">
+                <a asp-controller="Home" asp-action="Signup" class="btn btn-outline-primary">
+                    Create New Account
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-lg-6">
+        <div class="card shadow border-0 h-100">
+            <div class="card-body p-5">
+                <div class="text-center mb-4">
+                    <h2 class="fw-bold">Login to Your Account</h2>
+                    <p class="text-muted">Enter your credentials below to continue.</p>
+                </div>
+
+                @if (TempData["Success"] != null)
+                {
+                    <div class="alert alert-success">@TempData["Success"]</div>
+                }
+
+                <form asp-action="Login" method="post">
+                    @Html.AntiForgeryToken()
+                    <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+
+                    <div class="mb-3">
+                        <label asp-for="Email" class="form-label"></label>
+                        <input asp-for="Email" class="form-control form-control-lg" placeholder="Enter your email" />
+                        <span asp-validation-for="Email" class="text-danger"></span>
+                    </div>
+
+                    <div class="mb-4">
+                        <label asp-for="Password" class="form-label"></label>
+                        <input asp-for="Password" class="form-control form-control-lg" placeholder="Enter your password" />
+                        <span asp-validation-for="Password" class="text-danger"></span>
+                    </div>
+
+                    <div class="d-grid">
+                        <button type="submit" class="btn btn-primary btn-lg">Login</button>
+                    </div>
+
+                    <p class="text-center mt-4 mb-0">
+                        Don’t have an account?
+                        <a asp-controller="Home" asp-action="Signup" class="fw-semibold text-decoration-none">Create one</a>
+                    </p>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

@@ -1,0 +1,228 @@
+﻿@{
+    ViewData["Title"] = "Home";
+}
+
+<section class="hero-section">
+    <div class="row align-items-center g-4">
+        <div class="col-lg-7">
+            <span class="section-badge">Student Marketplace Platform</span>
+            <h1 class="display-4 fw-bold mt-3 mb-3">A Smarter Way to Buy and Sell on Campus</h1>
+            <p class="lead text-muted mb-4">
+                Campus Marketplace helps students discover practical products, save money, and connect
+                through a trusted digital space designed specifically for university life.
+            </p>
+
+            <div class="d-flex flex-wrap gap-3 mb-4">
+                <a asp-controller="Home" asp-action="Products" class="btn btn-primary btn-lg">Explore Products</a>
+                <a asp-controller="Home" asp-action="Signup" class="btn btn-outline-dark btn-lg">Create Account</a>
+            </div>
+
+            <div class="row g-3">
+                <div class="col-sm-4">
+                    <div class="stat-card">
+                        <h3>100+</h3>
+                        <p>Student Listings</p>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="stat-card">
+                        <h3>24/7</h3>
+                        <p>Marketplace Access</p>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="stat-card">
+                        <h3>Safe</h3>
+                        <p>Campus-Focused Space</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-5">
+            <div class="hero-side-card">
+                <h3 class="mb-4">Why Students Choose Campus Marketplace</h3>
+
+                <div class="feature-block">
+                    <h5>Built Around Student Needs</h5>
+                    <p class="mb-0">Find useful items like laptops, study tools, accessories, and everyday campus essentials.</p>
+                </div>
+
+                <div class="feature-block">
+                    <h5>Professional Experience</h5>
+                    <p class="mb-0">Responsive design, structured pages, and modern layout create a polished web platform.</p>
+                </div>
+
+                <div class="feature-block">
+                    <h5>Simple and Organized</h5>
+                    <p class="mb-0">Students can browse quickly, search easily, and connect with confidence in one platform.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="mt-5">
+    <div class="text-center mb-4">
+        <span class="section-badge">Browse Categories</span>
+        <h2 class="fw-bold mt-3">Popular Campus Categories</h2>
+        <p class="text-muted">Explore the kinds of products students search for most often.</p>
+    </div>
+
+    <div class="row g-4">
+        <div class="col-md-6 col-lg-3">
+            <div class="category-card h-100">
+                <div class="category-icon">L</div>
+                <h4>Laptops</h4>
+                <p class="text-muted mb-0">Portable computers for study, research, and presentations.</p>
+            </div>
+        </div>
+
+        <div class="col-md-6 col-lg-3">
+            <div class="category-card h-100">
+                <div class="category-icon">P</div>
+                <h4>Phones</h4>
+                <p class="text-muted mb-0">Useful mobile devices for communication and daily campus life.</p>
+            </div>
+        </div>
+
+        <div class="col-md-6 col-lg-3">
+            <div class="category-card h-100">
+                <div class="category-icon">T</div>
+                <h4>Tablets</h4>
+                <p class="text-muted mb-0">Lightweight devices for notes, reading, and productivity.</p>
+            </div>
+        </div>
+
+        <div class="col-md-6 col-lg-3">
+            <div class="category-card h-100">
+                <div class="category-icon">A</div>
+                <h4>Accessories</h4>
+                <p class="text-muted mb-0">Headphones, keyboards, and useful academic accessories.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="mt-5">
+    <div class="text-center mb-4">
+        <span class="section-badge">Benefits</span>
+        <h2 class="fw-bold mt-3">Why This Platform Matters</h2>
+        <p class="text-muted">Campus Marketplace supports a more connected and efficient student community.</p>
+    </div>
+
+    <div class="row g-4">
+        <div class="col-md-4">
+            <div class="info-card h-100">
+                <h4>Affordable Access</h4>
+                <p class="text-muted mb-0">
+                    Students can find useful products at more practical prices within a campus-focused marketplace.
+                </p>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="info-card h-100">
+                <h4>Convenient Discovery</h4>
+                <p class="text-muted mb-0">
+                    Smart product browsing and clear categories make it easier to discover relevant items quickly.
+                </p>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="info-card h-100">
+                <h4>Better Student Connection</h4>
+                <p class="text-muted mb-0">
+                    The platform encourages peer-to-peer exchange and supports a stronger campus community.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="mt-5">
+    <div class="text-center mb-4">
+        <span class="section-badge">Trust & Safety</span>
+        <h2 class="fw-bold mt-3">Built for Confidence</h2>
+        <p class="text-muted">A professional structure helps create a smoother and safer user experience.</p>
+    </div>
+
+    <div class="row g-4">
+        <div class="col-md-4">
+            <div class="trust-card h-100">
+                <h4>Secure Accounts</h4>
+                <p class="text-muted mb-0">Signup and login systems support structured user access and database-backed account management.</p>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="trust-card h-100">
+                <h4>Organized Listings</h4>
+                <p class="text-muted mb-0">Products are displayed in a clean layout with search and category support for better browsing.</p>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="trust-card h-100">
+                <h4>Responsive Design</h4>
+                <p class="text-muted mb-0">The platform adapts across devices to provide a consistent student experience.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="mt-5">
+    <div class="text-center mb-4">
+        <span class="section-badge">Featured Products</span>
+        <h2 class="fw-bold mt-3">Popular Student Picks</h2>
+        <p class="text-muted">A preview of useful items available on the platform.</p>
+    </div>
+
+    <div class="row g-4">
+        <div class="col-md-4">
+            <div class="market-card">
+                <div class="product-badge">Popular</div>
+                <img src="/images/laptop.jpg" class="market-image" alt="Laptop" />
+                <div class="market-body">
+                    <h4 class="market-title">Laptop</h4>
+                    <p class="market-text">A reliable device for lectures, assignments, and presentations.</p>
+                    <a asp-controller="Home" asp-action="Products" class="btn btn-outline-primary">View Marketplace</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="market-card">
+                <div class="product-badge">Popular</div>
+                <img src="/images/phone.jpg" class="market-image" alt="Phone" />
+                <div class="market-body">
+                    <h4 class="market-title">Phone</h4>
+                    <p class="market-text">A smart mobile device for communication and daily productivity.</p>
+                    <a asp-controller="Home" asp-action="Products" class="btn btn-outline-primary">View Marketplace</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="market-card">
+                <div class="product-badge">Popular</div>
+                <img src="/images/headphones.jpg" class="market-image" alt="Headphones" />
+                <div class="market-body">
+                    <h4 class="market-title">Headphones</h4>
+                    <p class="market-text">A useful accessory for studying, focus time, and entertainment.</p>
+                    <a asp-controller="Home" asp-action="Products" class="btn btn-outline-primary">View Marketplace</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="mt-5">
+    <div class="cta-banner text-center">
+        <h2 class="fw-bold mb-3">Start Exploring the Marketplace Today</h2>
+        <p class="text-muted mb-4">
+            Join Campus Marketplace to browse useful products, discover campus opportunities, and experience a more modern student marketplace.
+        </p>
+        <div class="d-flex justify-content-center flex-wrap gap-3">
+            <a asp-controller="Home" asp-action="Signup" class="btn btn-primary btn-lg">Join Now</a>
+            <a asp-controller="Home" asp-action="Contact" class="btn btn-outline-primary btn-lg">Contact Support</a>
+        </div>
+    </div>
+</section>

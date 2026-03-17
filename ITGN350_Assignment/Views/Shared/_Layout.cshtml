@@ -1,0 +1,147 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Campus Marketplace</title>
+
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+</head>
+<body>
+
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark custom-nav shadow-sm">
+            <div class="container">
+
+                <a class="navbar-brand fw-bold"
+                       asp-controller="Home"
+                       asp-action="Index">
+                    Campus Marketplace
+                </a>
+
+                <button class="navbar-toggler"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#mainNav"
+                        aria-controls="mainNav"
+                        aria-expanded="false"
+                        aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="mainNav">
+                    <ul class="navbar-nav ms-auto align-items-lg-center">
+
+                        <li class="nav-item">
+                            <a class="nav-link"
+                                   asp-controller="Home"
+                                   asp-action="Index">
+                                Home
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link"
+                                   asp-controller="Home"
+                                   asp-action="Products">
+                                Products
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link"
+                                   asp-controller="Home"
+                                   asp-action="Sell">
+                                Sell Item
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link"
+                                   asp-controller="Home"
+                                   asp-action="About">
+                                About
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link"
+                                   asp-controller="Home"
+                                   asp-action="Contact">
+                                Contact
+                            </a>
+                        </li>
+
+                        @if (Context.Session.GetInt32("UserId") != null)
+                        {
+                            <li class="nav-item">
+                                <span class="nav-link text-white">
+                                    Hi, @Context.Session.GetString("UserName")
+                                </span>
+                            </li>
+                            <li class="nav-item">
+                                <a class="btn btn-light btn-sm ms-lg-2"
+                                       asp-controller="Home"
+                                       asp-action="Logout">
+                                    Logout
+                                </a>
+                            </li>
+                        }
+                        else
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link"
+                                       asp-controller="Home"
+                                       asp-action="Login">
+                                    Login
+                                </a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="btn btn-primary btn-sm ms-lg-2"
+                                       asp-controller="Home"
+                                       asp-action="Signup">
+                                    Sign Up
+                                </a>
+                            </li>
+                        }
+
+                    </ul>
+                </div>
+
+            </div>
+        </nav>
+    </header>
+
+    <main class="container py-4">
+        @RenderBody()
+    </main>
+
+    <footer class="site-footer mt-5">
+        <div class="container py-4">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5 class="footer-title">Campus Marketplace</h5>
+                    <p class="footer-text">
+                        A smarter way for students to discover and share useful
+                        products within the university community.
+                    </p>
+                </div>
+
+                <div class="col-md-6 text-md-end">
+                    <p class="footer-copy">
+                        © 2026 Campus Marketplace | ITGN 350 Web Development Project
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

@@ -1,0 +1,109 @@
+﻿@model List<ITGN350_Assignment.Models.Product>
+
+@{
+    ViewData["Title"] = "Products";
+    var products = Model ?? new List<ITGN350_Assignment.Models.Product>();
+}
+
+<section class="page-hero text-center">
+    <span class="section-badge">Marketplace Listings</span>
+    <h1 class="display-5 fw-bold mt-3">Explore Student Essentials</h1>
+    <p class="lead text-muted mx-auto hero-text">
+        Browse a curated selection of useful products for university life, from electronics to daily academic accessories.
+    </p>
+</section>
+
+<div class="search-box-wrapper mt-4 mb-3">
+    <input type="text" id="productSearch" class="form-control form-control-lg" placeholder="Search products..." />
+</div>
+
+<div class="d-flex flex-wrap gap-2 mb-4">
+    <button class="btn-filter active" data-filter="all">All</button>
+    <button class="btn-filter" data-filter="laptop">Laptops</button>
+    <button class="btn-filter" data-filter="phone">Phones</button>
+    <button class="btn-filter" data-filter="tablet">Tablets</button>
+    <button class="btn-filter" data-filter="accessory">Accessories</button>
+</div>
+
+@if (products.Any())
+{
+    <div class="row g-4" id="productList">
+        @foreach (var product in products)
+        {
+            var category = "accessory";
+
+            if (product.Name.Contains("Laptop", StringComparison.OrdinalIgnoreCase))
+            {
+                category = "laptop";
+            }
+            else if (product.Name.Contains("Phone", StringComparison.OrdinalIgnoreCase))
+            {
+                category = "phone";
+            }
+            else if (product.Name.Contains("Tablet", StringComparison.OrdinalIgnoreCase))
+            {
+                category = "tablet";
+            }
+
+            <div class="col-md-6 col-lg-4 product-card" data-category="@category">
+                <div class="market-card">
+                    <div class="product-badge">Student Pick</div>
+                    <img src="@product.ImageUrl" class="market-image" alt="@product.Name" />
+                    <div class="market-body">
+                        <h4 class="market-title">@product.Name</h4>
+                        <div class="product-rating mb-2">
+                            ⭐⭐⭐⭐☆
+                        </div>
+                        <p class="market-text">@product.Description</p>
+                        <div class="d-flex justify-content-between align-items-center mt-3">
+                            <h5 class="market-price mb-0">$@product.Price</h5>
+                            <div class="d-flex gap-2">
+                                <button type="button"
+                                        class="btn btn-outline-primary open-product-modal"
+                                        data-name="@product.Name"
+                                        data-description="@product.Description"
+                                        data-price="@product.Price"
+                                        data-image="@product.ImageUrl">
+                                    View Details
+                                </button>
+
+                                <a asp-controller="Home" asp-action="Contact" class="btn btn-primary">
+                                    Buy Now
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+}
+else
+{
+    <div class="alert alert-warning text-center mt-4">
+        No products are available right now.
+    </div>
+}
+
+<div id="noProductsMessage" class="no-results-box text-center mt-4 d-none">
+    <h4 class="fw-bold">No matching products found</h4>
+    <p class="text-muted mb-0">Try another keyword or choose a different category.</p>
+</div>
+
+<div id="productModal" class="modal-backdrop-custom">
+    <div class="product-modal-box">
+        <button type="button" class="modal-close-btn" id="closeProductModal">×</button>
+        <div class="row g-4 align-items-center">
+            <div class="col-md-5">
+                <img id="modalProductImage" src="" alt="Product image" class="img-fluid rounded-4" />
+            </div>
+            <div class="col-md-7">
+                <span class="section-badge">Product Details</span>
+                <h2 id="modalProductName" class="fw-bold mt-3 mb-3"></h2>
+                <p id="modalProductDescription" class="text-muted"></p>
+                <h4 id="modalProductPrice" class="market-price mb-4"></h4>
+                <button class="btn btn-primary">Interested</button>
+            </div>
+        </div>
+    </div>
+</div>
